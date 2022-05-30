@@ -1,4 +1,7 @@
-import {sum} from './modules/sum';
+import { getTemplateFromRoute } from './lib/router';
 
-const root = document.querySelector('#root');
-root.textContent = sum(6, -1).toString();
+import './styles.css';
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.innerHTML = getTemplateFromRoute(location.pathname);
+});
